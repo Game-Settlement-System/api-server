@@ -11,4 +11,5 @@ public class GssUserDTO {
 	private String email;
 	private String userPassword;
 	private String userPhone;
+	
 }
