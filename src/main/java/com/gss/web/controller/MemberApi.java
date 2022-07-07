@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MemberApi {
 
 	@GetMapping
-	public String singUpPage() {
+	public String joinMember() {
 		return "Hello! World!";
 	}
 }
