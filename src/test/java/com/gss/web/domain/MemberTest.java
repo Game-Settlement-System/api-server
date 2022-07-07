@@ -2,18 +2,17 @@ package com.gss.web.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
-import static org.assertj.core.api.Assertions.assertThatIllegalStateException;
-import static org.assertj.core.api.Assertions.assertThatNullPointerException;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
 
+
 class MemberTest {
 
 	@Test
-	void ¸â¹ö_»ı¼º_¼º°ø() {
+	void ë©¤ë²„_ìƒì„±_ì„±ê³µ() {
+		
 		final Member member = new Member("test@naver.com", "1234", "01012345678");
 		
 		assertThat(member.getEmail()).isEqualTo("test@naver.com");
@@ -23,36 +22,36 @@ class MemberTest {
 	
 	@ParameterizedTest
 	@NullAndEmptySource
-	void ¸â¹ö_»ı¼º_½ÇÆĞ__ÀÌ¸ŞÀÏÀÌ_null_ÀÌ°Å³ª_ºó°ª(String email) {
+	void ë©¤ë²„_ìƒì„±_ì‹¤íŒ¨__ì´ë©”ì¼ì´_null_ì´ê±°ë‚˜_ë¹ˆê°’(String email) {
 		assertThatIllegalArgumentException().isThrownBy(() -> new Member(email, "1234", "01012345678"));
 	}
 	
 	@ParameterizedTest
 	@NullAndEmptySource
-	void ¸â¹ö_»ı¼º_½ÇÆĞ__ÆĞ½º¿öµå°¡_null_ÀÌ°Å³ª_ºó°ª(String password) {
+	void ë©¤ë²„_ìƒì„±_ì‹¤íŒ¨__íŒ¨ìŠ¤ì›Œë“œê°€_null_ì´ê±°ë‚˜_ë¹ˆê°’(String password) {
 		assertThatIllegalArgumentException().isThrownBy(() -> new Member("test@naver.com", password, "01012345678"));
 	}
 	
 	@ParameterizedTest
 	@NullAndEmptySource
-	void ¸â¹ö_»ı¼º_½ÇÆĞ__ÈŞ´ëÀüÈ­¹øÈ£°¡_null_ÀÌ°Å³ª_ºó°ª(String userphone) {
+	void ë©¤ë²„_ìƒì„±_ì‹¤íŒ¨__íœ´ëŒ€ì „í™”ë²ˆí˜¸ê°€_null_ì´ê±°ë‚˜_ë¹ˆê°’(String userphone) {
 		assertThatIllegalArgumentException().isThrownBy(() -> new Member("test@naver.com", "1234", userphone));
 	}
 	
 	@Test
-	void ¸â¹ö_»ı¼º_½ÇÆĞ__ÀÌ¸ŞÀÏÀÌ_°ø¹é() {
+	void ë©¤ë²„_ìƒì„±_ì‹¤íŒ¨__ì´ë©”ì¼ì´_ê³µë°±() {
 		String email = " ";
 		assertThatIllegalArgumentException().isThrownBy(() -> new Member(email, "1234", "01012345678"));
 	}
 	
 	@Test
-	void ¸â¹ö_»ı¼º_½ÇÆĞ__ÆĞ½º¿öµå°¡_°ø¹é() {
+	void ë©¤ë²„_ìƒì„±_ì‹¤íŒ¨__íŒ¨ìŠ¤ì›Œë“œê°€_ê³µë°±() {
 		String password = " ";
 		assertThatIllegalArgumentException().isThrownBy(() -> new Member("test@naver.com", password, "01012345678"));
 	}
 	
 	@Test
-	void ¸â¹ö_»ı¼º_½ÇÆĞ__ÈŞ´ëÀüÈ­¹øÈ£°¡_°ø¹é() {
+	void ë©¤ë²„_ìƒì„±_ì‹¤íŒ¨__íœ´ëŒ€ì „í™”ë²ˆí˜¸ê°€_ê³µë°±() {
 		String userphone = " ";
 		assertThatIllegalArgumentException().isThrownBy(() -> new Member("test@naver.com", "1234", userphone));
 	}

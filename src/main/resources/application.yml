@@ -1,9 +1,19 @@
+#spring :
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: ${db.url:jdbc:postgresql://localhost:5432/mainDb}
+#    username: ${db.username:root}
+#    password: ${db.password:1234}
+#    hikari:
+#      maximum-pool-size: 2
+#      minimum-idle: 1
+
 spring :
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: ${db.url:jdbc:postgresql://localhost:5432/mainDb}
-    username: ${db.username:root}
-    password: ${db.password:1234}
+    url: ${db.url:jdbc:postgresql://postgresql-gss.c37rqsc37qzh.us-west-2.rds.amazonaws.com:5432/postgres}
+    username: ${db.username:postgres}
+    password: ${db.password:gss20220704post}
     hikari:
       maximum-pool-size: 2
       minimum-idle: 1
