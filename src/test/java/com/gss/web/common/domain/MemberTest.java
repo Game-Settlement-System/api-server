@@ -1,4 +1,4 @@
-package com.gss.web.domain;
+package com.gss.web.common.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
@@ -6,11 +6,9 @@ import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.NullAndEmptySource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 
 class MemberTest {
-
 	@Test
 	void 멤버_생성_성공() {
 		

@@ -2,12 +2,30 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gss.web.mapper.MemberMapper">
-	<insert id="joinUp" parameterType="com.gss.web.domain.Member">
-		INSERT INTO gssuser (email, userpassword, userphone)
-		values(#{email},#{userpassword},#{userphone})
+<mapper namespace="com.gss.web.common.mapper.MemberMapper">
+	<insert id="joinUp" parameterType="com.gss.web.common.domain.Member">
+		INSERT INTO gssuser (
+			email, 
+			userpassword, 
+			userphone
+		) values(
+			#{email},
+			#{userpassword},
+			#{userphone}
+		)
 	</insert>
-	<select id="checkEmail" parameterType="String" resultType="com.gss.web.domain.Member">
-		select * from gssuser where email=#{email}
+	<select id="checkEmail" parameterType="String" resultType="int">
+		select count(*) 
+		from gssuser 
+		where email=#{email}
+	</select>
+	
+	<select id="findByEmail" parameterType="String" resultType="com.gss.web.common.domain.Member">
+		select
+			email, 
+			userpassword, 
+			userphone
+		from gssuser
+		where email = #{email} 
 	</select>
 </mapper>
