@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/member")
+@RequestMapping("/singup")
 public class MemberApi {
-	
+
 	@GetMapping
-	public String test() {
+	public String joinMember() {
 		return "Hello! World!";
 	}
 }
