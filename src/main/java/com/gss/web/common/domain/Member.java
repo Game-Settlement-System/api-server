@@ -1,4 +1,4 @@
-package com.gss.web.domain;
+package com.gss.web.common.domain;
 
 import org.apache.logging.log4j.util.Strings;
 
