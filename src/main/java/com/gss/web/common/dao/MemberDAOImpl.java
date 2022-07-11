@@ -14,7 +14,6 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	@Override
 	public int joinMember(Member member) {
-		// TODO Auto-generated method stub
 		return sqlSession.getMapper(MemberMapper.class).joinUp(member);
 		
 	}
@@ -22,5 +21,10 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public Member findByEmail(String email) {
 		return sqlSession.getMapper(MemberMapper.class).findByEmail(email);
+	}
+
+	@Override
+	public boolean checkEmail(String email) {
+		return sqlSession.getMapper(MemberMapper.class).checkEmail(email);
 	}
 }

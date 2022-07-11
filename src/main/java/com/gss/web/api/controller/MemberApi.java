@@ -15,14 +15,21 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @RequestMapping("/singup")
 public class MemberApi {
-	
 	private Logger logger = org.slf4j.LoggerFactory.getLogger(MemberApi.class);
-	
+
 	private final MemberService memberService;
 
 	@PostMapping("/join")
-	public void joinMember(@RequestBody MemberCreateRequest dto) {
-		logger.info("[POST] :::: email : "+ dto.getEmail());
-		memberService.joinUp(dto);
+	public String joinMember(@RequestBody MemberCreateRequest dto) {
+		String path = "";
+		logger.info("[POST] :::: email : " + dto.getEmail());
+		if (memberService.checkEmail(dto.getEmail())) {
+			path = "/singup/join";
+		} else {
+			memberService.joinUp(dto);
+			path = "/login";
+		}
+		System.out.println("MemberApi::::::::"+path);
+		return path;
 	}
 }

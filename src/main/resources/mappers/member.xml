@@ -4,19 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gss.web.common.mapper.MemberMapper">
 	<insert id="joinUp" parameterType="com.gss.web.common.domain.Member">
-		INSERT INTO gssuser (
+		INSERT INTO gssusertab (
 			email, 
 			userpassword, 
-			userphone
+			userphone,
+			privilge
 		) values(
 			#{email},
 			#{userpassword},
-			#{userphone}
+			#{userphone},
+			#{privilge}
 		)
 	</insert>
-	<select id="checkEmail" parameterType="String" resultType="int">
+	<select id="checkEmail" parameterType="String" resultType="boolean">
 		select count(*) 
-		from gssuser 
+		from gssusertab 
 		where email=#{email}
 	</select>
 	
@@ -24,8 +26,9 @@
 		select
 			email, 
 			userpassword, 
-			userphone
-		from gssuser
+			userphone,
+			privilge
+		from gssusertab
 		where email = #{email} 
 	</select>
 </mapper>
