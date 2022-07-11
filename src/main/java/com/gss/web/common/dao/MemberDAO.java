@@ -6,4 +6,6 @@ public interface MemberDAO {
 	int joinMember(Member member);
 	
 	Member findByEmail(String email);
+	
+	boolean checkEmail(String email);
 }

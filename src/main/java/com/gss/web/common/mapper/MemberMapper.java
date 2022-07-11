@@ -9,7 +9,7 @@ public interface MemberMapper {
 
 	int joinUp(Member member);
 
-	int checkEmail(String email);
-	
+	boolean checkEmail(String email);
+
 	Member findByEmail(String email);
 }
